@@ -1,0 +1,100 @@
+
+                /***********************get edge cues***************************/
+//                vector< Mat> edge_cues;
+//                int STEP = 5*60;
+//                for(int i = 0;i<superpixels.size();i++)
+//                {
+//                    for(int j = i+1;j<superpixels.size();j++)
+//                    {
+//                        Mat tmask(roi.size(),CV_8UC1);
+//                        tmask.setTo(0);
+//                        double dist = (superpixels[i].middle_point.x- superpixels[j].middle_point.x)*(superpixels[i].middle_point.x-superpixels[j].middle_point.x)+(superpixels[i].middle_point.y- superpixels[j].middle_point.y)*(superpixels[i].middle_point.y- superpixels[j].middle_point.y);
+////                        cout<<"dist:"<<dist<<endl;
+//                        if(dist<STEP)
+//                        {
+//                            Mat i_img(roi.size(),CV_8UC1);
+//                            Mat j_img(roi.size(),CV_8UC1);
+//                            i_img.setTo(0);
+//                            j_img.setTo(0);
+//                            superpixels[i].DrawPointsOnshow(i_img);
+//                            superpixels[j].DrawPointsOnshow(j_img);
+//                            superpixels[i].DrawPointsOnshow(tmask);
+//                            superpixels[j].DrawPointsOnshow(tmask);
+////                            imshow("i_img",i_img);
+////                            imshow("j_img",j_img);
+////                            imshow("tmask",tmask);
+////                            waitKey(0);
+//                            vector< vector<Point> > i_contour;
+//                            vector< vector<Point> > j_contour;
+//                            vector< vector<Point> > ij_contour;
+//                            findcontours(i_img,i_contour);
+//                            findcontours(j_img,j_contour);
+//                            findcontours(tmask,ij_contour);
+//                            if(ij_contour.size()==1)
+//                            {
+//                                Mat line(roi.size(),CV_8UC1);
+//                                line.setTo(0);
+//                                Mat i_c(roi.size(),CV_8UC1);
+//                                i_c.setTo(0);
+//                                drawContours(i_c,i_contour,-1,cv::Scalar(255,255,255),1);
+//                                Mat j_c(roi.size(),CV_8UC1);
+//                                j_c.setTo(0);
+//                                drawContours(j_c,j_contour,-1,cv::Scalar(255,255,255),1);
+//                                Mat ij_c(roi.size(),CV_8UC1);
+//                                ij_c.setTo(0);
+//                                drawContours(ij_c,ij_contour,-1,cv::Scalar(255,255,255),1);
+//                                for(int yi=0;yi<roi.rows;yi++)
+//                                {
+//                                    uchar* iptr = i_c.ptr<uchar>(yi);
+//                                    uchar* jptr = j_c.ptr<uchar>(yi);
+//                                    uchar* ijptr = ij_c.ptr<uchar>(yi);
+//                                    uchar* lptr = line.ptr<uchar>(yi);
+//                                    for(int xj=0;xj<roi.cols;xj++)
+//                                    {
+//                                        if(iptr[xj]==255&&ijptr[xj]==0)
+//                                        {
+//                                            lptr[xj]=255;
+//                                        }
+//                                        if(jptr[xj]==255&&ijptr[xj]==0)
+//                                        {
+//                                            lptr[xj]=255;
+//                                        }
+//                                        if(jptr[xj]==255&&iptr[xj]==255)
+//                                        {
+//                                             lptr[xj]=255;
+//                                        }
+//                                    }
+
+//                                }
+////                                imshow("i_c",i_c);
+////                                imshow("j_c",j_c);
+////                                imshow("ij_c",ij_c);
+////                                imshow("line",line);
+////                                waitKey(0);
+//                                edge_cues.push_back(line);
+//                            }
+//                        }
+//                    }
+//                }
+//                cout<<"edge_cues size:"<<edge_cues.size()<<endl;
+
+//                Mat show(roi.size(),CV_8UC1);
+//                show.setTo(0);
+//                for(int i = 0;i<edge_cues.size();i++)
+//                {
+
+//                    for(int yi=0;yi<roi.rows;yi++)
+//                    {
+//                        uchar* lptr = edge_cues[i].ptr<uchar>(yi);
+//                        uchar* sptr = show.ptr<uchar>(yi);
+//                        for(int xj=0;xj<roi.cols;xj++)
+//                        {
+//                            if(lptr[xj])
+//                            {
+//                                sptr[xj]=255;
+//                            }
+//                        }
+//                    }
+//                }
+//                imshow("show",show);
+                /***********************get edge cues end***************************/
